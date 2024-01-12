@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.centeredLowerTitle {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centeredLowerInfo {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the header */
+.header {
+    position: relative;
+    text-align: center;
+    padding: none;
+    color: rgb(199, 195, 170);
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #b4b3b3;
+  color: black;
+}
+
+.navbar a.current {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 2px solid #ccc;
+  background-color: #f1f1f1;
+  width: 20%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 12px 12px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+
+/* Fake image, just for this example */
+.headerImage {
+  width: 100%;
+  z-index: 0;
+}
+
+/* Removes little bit of white space between header image and nav bar */
+img{
+ display:block;
+}
+
+/* Footer */
+.footer {
+  padding: 15px;
+  text-align: center;
+  background: #ddd;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="headerImage" src="Hiking\fireTowerAtSunset2.jpg" alt="Fire Tower at Sunset">
+  <div class="centeredLowerTitle">Hiking Minnesota</div>
+  <div class="centeredLowerInfo">A collection of trails and adventures</div>
+</div>
+
+<div class="navbar">
+  <a a href="index.html">Home</a>
+  <a href="#">Hiking Log</a>
+  <a href="#">Distance</a>
+  <a a href="sources.html">Sources</a>
+  <a class = "current">Research</a>
+  <a href="#" class="right">Map</a>
+</div>
+
+<div class="tab">
+    <button class="tablinks" onclick="openInfo(event, 'Ecological Classification System')" id="defaultOpen">Ecological Classification System</button>
+    <button class="tablinks" onclick="openInfo(event, 'Vocab Word')">Vocab Word</button>
+    <button class="tablinks" onclick="openInfo(event, 'Vocab Word2')">Vocab Word2</button>
+  </div>
+  
+  <div id="Ecological Classification System" class="tabcontent">
+    <h3>Ecological Classification System</h3>
+    <p>WRITE INFO</p>
+  </div>
+  
+  <div id="Vocab Word" class="tabcontent">
+    <h3>Vocab Word</h3>
+    <p>WRITE INFO 2</p> 
+  </div>
+  
+  <div id="Vocab Word2" class="tabcontent">
+    <h3>Vocab Word2</h3>
+    <p>WRITE INFO 3</p>
+  </div>
+  
+  <script>
+  function openInfo(evt, Vocab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(Vocab).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+
+<div class="footer">
+    <h2></h2>
+  </div>
+
+</body>
+</html>
