@@ -73,17 +73,36 @@ body {
   color: black;
 }
 
-/* Main area */
-.main {   
-  flex: 100%;
+.headerImage {
+  width: 100%;
+  z-index: 0;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* title row across the whole screen */
+.title {   
+  flex: 80%;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+/* left column of links */
+.leftBody {   
+  flex: 50%;
   background-color: white;
   padding: 20px;
 }
 
-/* Fake image, just for this example */
-.headerImage {
-  width: 100%;
-  z-index: 0;
+/* right column of links */
+.rightBody {
+  flex: 50%;
+  background-color: white;
+  padding: 20px;
 }
 
 /* Removes little bit of white space between header image and nav bar */
@@ -98,12 +117,19 @@ img{
   background: #ddd;
 }
 
-@media screen and (max-width: 500px) {
+/* Responsive layout - when the screen is less than 500px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+    width:100%;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
   .navbar a {
     float: none;
-    display: block;
-    width: 100%;
-    text-align: left;
+    width:100%;
   }
 }
 </style>
@@ -126,9 +152,11 @@ img{
 </div>
 
 <div class="row">
-    <div class="main">
+    <div class="Title">
         <h2>Sources</h2>
+    </div>
 
+    <div class="leftBody">
         <h4>Minnesota DNR</h4>
         <a href="https://www.dnr.state.mn.us/state_parks/index.html">State Parks</a>
         <br>
@@ -137,15 +165,17 @@ img{
         <a href="https://www.dnr.state.mn.us/state_trails/index.html">State Trails</a>
         <br>
         <br>
+    </div>
 
+    <div class="rightBody">
         <h4>National Forests</h4>
         <a href="https://www.fs.usda.gov/main/chippewa/home">Chippewa National Forest</a>
         <br>
         <a href="https://www.fs.usda.gov/superior">Superior National Forest</a>
         <br>
   
-      </div>
-  </div>
+    </div>
+</div>
 
 
 <div class="footer">
