@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.centeredLowerTitle {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centeredLowerInfo {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the header */
+.header {
+    position: relative;
+    text-align: center;
+    padding: none;
+    color: rgb(199, 195, 170);
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #b4b3b3;
+  color: black;
+}
+
+.navbar a.current {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.headerImage {
+  width: 100%;
+  z-index: 0;
+}
+
+/* Removes little bit of white space between header image and nav bar */
+img{
+ display:block;
+}
+
+/* Footer */
+.footer {
+  padding: 15px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="headerImage" src="GitHub\Hiking-Website\fireTowerAtSunset2.jpg" alt="Fire Tower at Sunset">
+  <div class="centeredLowerTitle">Hiking Minnesota</div>
+  <div class="centeredLowerInfo">A collection of trails and adventures</div>
+</div>
+
+<div class="navbar">
+  <a class = "current">Home</a>
+  <a href="#">Hiking Log</a>
+  <a href="#">Distance</a>
+  <a a href="sources.html">Sources</a>
+  <a a href="research.html">Research</a>
+  <a href="#" class="right">Map</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <img src="mePhoto.jpg" alt="Profile photos of me" width=100% >
+    <p>WRITE INFO ABOUT ME HERE</p>
+  </div>
+
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>info ..</p>
+    <p>more info</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>    
+  </div>
+</div>
+
+<div class="footer">
+    <h2></h2>
+  </div>
+
+</body>
+</html>
